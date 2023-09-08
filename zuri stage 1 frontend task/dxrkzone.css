@@ -1,0 +1,18 @@
+body{background-color: rgb(19, 16, 24);
+}
+h1{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 5rem;
+   color: rgba(195, 195, 176, 0.394);
+}
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: beige;
+}
+div{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(129, 124, 136);
+}
+a{
+    color: rgb(127, 127, 177);
+}

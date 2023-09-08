@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dxrkzone.css">
+    <title>stage 1 Frontend task</title>
+
+</head>
+<body class="main">
+    <h1 data-testid="slackUserName" id="name">Dxrkzone</h1>
+    <img data-testid="slackDisplayImage" src="https://ca.slack-edge.com/T05FFAA91JP-U05QYQB05ST-360843e846de-512" alt="dxrkzone">
+    <div data-testid="currentDayOfTheWeek" id="day"></div>
+    <script>
+        const Days = new Date().getDay();
+        const  days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        document.getElementById('day').innerHTML = days[day];
+      </script>
+    <div data-testid="currentUTCTime" id="time"></div>
+    <script>
+       
+        const date = new Date();
+        
+        const day = date.getDay();
+      
+        const time = date.toUTCString();
+       
+        const milliseconds = time.substring(time.length - 3);
+        
+        document.getElementById('day').innerHTML = days[day];
+        document.getElementById('time').innerHTML = time + '.' + milliseconds;
+        
+        setInterval(() => {
+       
+          const date = new Date();
+        
+          const time = date.toUTCString();
+      
+          const milliseconds = time.substring(time.length - 3);
+          
+          document.getElementById('time').innerHTML = time + '.' + milliseconds;
+        }, 1000);
+      </script>
+    <h2>Frontend Track</h2>
+   <a data-testid=“githubURL” href="http://github.com/dxrkzone/zuri-frontend-stage-1" target="_blank" rel="noopener noreferrer"> <h3> click this link to go to the github repo with the source code for this task</h3></a>
+</body>
+</html>
