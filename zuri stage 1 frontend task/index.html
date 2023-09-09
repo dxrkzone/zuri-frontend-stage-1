@@ -22,17 +22,23 @@
     </script>
     <div data-testid="currentUTCTime" id="time"></div>
     <script>
-      function showNigerianTime() {
-        var date = new Date();
-        var utcHours = date.getUTCHours();
-        var nigerianHours = (utcHours + 1) % 24; // Add 1 hour for Nigerian time
-        var utcMinutes = date.getUTCMinutes().toString().padStart(2, '0');
-        var utcSeconds = date.getUTCSeconds().toString().padStart(2, '0');
-        document.getElementById("time").innerHTML = nigerianHours + ":" + utcMinutes + ":" + utcSeconds + " Nigerian Time (UTC+1)";
-      }
+      function updateNigerianTime() {
+     
+          const utcTime = new Date();
+
     
-      setInterval(showNigerianTime, 1000);
-    </script>
+          const nigerianTime = new Date(utcTime.getTime() + (3600000 * 1)); // Adding 1 hour to UTC
+
+         
+          const formattedTime = nigerianTime.toISOString().slice(11, -1);
+
+         
+          document.getElementById('time').textContent = `Nigerian Time (UTC+1): ${formattedTime}`;
+      }
+
+      updateNigerianTime();
+      setInterval(updateNigerianTime, 1);
+  </script>
    
       
     <h2>Frontend Track</h2>
