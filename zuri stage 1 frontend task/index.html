@@ -20,25 +20,26 @@
       }
       setInterval(showDay, 1000);
     </script>
-    <div data-testid="currentUTCTime" id="time"></div>
-    <script>
-      function updateNigerianTime() {
-     
-          const utcTime = new Date();
-
+   <div data-testid="currentUTCTime" id="time"></div>
+   <script>
+     function updateNigerianTime() {
     
-          const nigerianTime = new Date(utcTime.getTime() + (3600000 * 1)); // Adding 1 hour to UTC
-
-         
-          const formattedTime = nigerianTime.toISOString().slice(11, -1);
-
-         
-          document.getElementById('time').textContent = `Nigerian Time (UTC+1): ${formattedTime}`;
-      }
-
-      updateNigerianTime();
-      setInterval(updateNigerianTime, 1);
-  </script>
+         const utcTime = new Date();
+   
+     
+         const nigerianTime = new Date(utcTime.getTime() + (3600000 * 1)); // Adding 1 hour to UTC
+   
+        
+         const formattedTime = nigerianTime.toISOString().slice(11, -1);
+   
+        
+         document.getElementById('time').textContent = formattedTime;
+     }
+   
+     updateNigerianTime();
+     setInterval(updateNigerianTime, 1);
+   </script>
+   
    
       
     <h2>Frontend Track</h2>
