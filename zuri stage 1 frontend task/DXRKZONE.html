@@ -22,20 +22,16 @@
     </script>
     <div data-testid="currentUTCTime" id="time"></div>
     <script>
-      function showTime() {
+      function showNigerianTime() {
         var date = new Date();
-  var utc = new Date(Date.UTC(
-    date.getUTCFullYear(),
-    date.getUTCMonth(),
-    date.getUTCDate(),
-    date.getUTCHours(),
-    date.getUTCMinutes(),
-    date.getUTCSeconds()
-  ));
-  
-  document.getElementById("time").innerHTML = utc.toISOString().slice(0, 19).replace('T', ' ') + " UTC";}
-
-      setInterval(showTime, 1000);
+        var utcHours = date.getUTCHours();
+        var nigerianHours = (utcHours + 1) % 24; // Add 1 hour for Nigerian time
+        var utcMinutes = date.getUTCMinutes().toString().padStart(2, '0');
+        var utcSeconds = date.getUTCSeconds().toString().padStart(2, '0');
+        document.getElementById("time").innerHTML = nigerianHours + ":" + utcMinutes + ":" + utcSeconds + " Nigerian Time (UTC+1)";
+      }
+    
+      setInterval(showNigerianTime, 1000);
     </script>
    
       
